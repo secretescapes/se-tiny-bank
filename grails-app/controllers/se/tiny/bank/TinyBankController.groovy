@@ -21,7 +21,6 @@ class TinyBankController {
             cr.balance -= amount
             Transaction tr = new Transaction(debit: dr, credit: cr, value: amount).save()
             saveAll(dr, cr, tr)
-
             sendDebitConfirmation(tr)
             sendCreditConfirmation(tr)
         }
@@ -31,9 +30,7 @@ class TinyBankController {
     }
 
     private void saveAll(Object... data) {
-        data.each {
-            it.save(flush: true)
-        }
+        data.each { it.save(flush: true) }
     }
 
     private void sendCreditConfirmation(Transaction transaction) {
