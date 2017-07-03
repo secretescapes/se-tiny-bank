@@ -16,7 +16,7 @@ class TinyBankController {
         Account cr = Account.get(params.cr as long)
         long amount = params.amt as long
 
-        if (cr.balance > amount) {
+        if (cr.balance >= amount) {
             dr.balance += amount
             cr.balance -= amount
             Transaction tr = new Transaction(debit: dr, credit: cr, value: amount).save()
