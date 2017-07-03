@@ -46,8 +46,8 @@ class TinyBankController {
         mailService.sendMail {
             to transaction.debit.email
             from FROM_EMAIL
-            subject "Credit transaction"
-            body "${transaction.value} was transferred from your account to ${transaction.credit.name}"
+            subject "Debit transaction"
+            body "${transaction.value} was transferred to your account from ${transaction.credit.name}"
         }
     }
 }
