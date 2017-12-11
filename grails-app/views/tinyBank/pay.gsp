@@ -16,7 +16,7 @@
         <b>From:</b>
         <g:select
                 name="cr"
-                from="${Account.list()}"
+                from="${accounts}"
                 optionKey="id"
                 optionValue="${{it.name + " : £" + it.balance}}"
                 noSelection="['':'-Choose account to credit-']"/>

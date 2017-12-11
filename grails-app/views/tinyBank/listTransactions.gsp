@@ -15,7 +15,7 @@
     <g:form name="transaction" action="listTransactions">
         <b>Person:</b>
         <g:select name="account.id"
-                  from="${Account.list()}"
+                  from="${accounts}"
                   optionKey="id"
                   optionValue="${{it.name + " : £" + it.balance}}"
                   noSelection="['':'-Choose account name-']"/>
@@ -31,8 +31,7 @@
         <th>Amount</th>
     </thead>
     <tbody>
-        <g:set var="account" value="${Account.read(params.account.id as long)}"/>
-        <g:each in="${Transaction.findAllByCreditOrDebit(account, account)}" var="transaction">
+        <g:each in="transactions" var="transaction">
             <tr>
                 <td>${transaction.id}</td>
                 <td>${transaction.credit.name}</td>

@@ -15,7 +15,7 @@
     <g:form name="transaction" action="listTransactions">
         <b>Person:</b>
         <g:select name="account.id"
-                  from="${Account.list()}"
+                  from="${accounts}"
                   optionKey="id"
                   optionValue="${{it.name + " : £" + it.balance}}"
                   noSelection="['':'-Choose account name-']"/>
