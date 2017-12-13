@@ -63,6 +63,7 @@ grails.project.dependency.resolution = {
         compile ":asset-pipeline:2.1.5"
         compile "org.grails.plugins:greenmail:1.3.4"
         compile "org.grails.plugins:mail:1.0.7"
+		compile ":console:1.5.11"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate4:4.3.8.1" // or ":hibernate:3.6.10.18"
